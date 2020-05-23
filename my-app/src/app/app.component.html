@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <canvas #canvas width="600" height="300"></canvas>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="play()">Play</button>
+
+      <div class="row my-3">
+        <div class="col-md-6">
+          <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+        </div>
+        <div class="col-md-6">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-6">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-md-12">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
