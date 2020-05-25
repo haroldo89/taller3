@@ -16,11 +16,47 @@ export class AppComponent implements OnInit {
   interval;
   squares: Square[] = [];
 
-  value: number = 100;
+  sldFalangeDigIzqValue: number = 0;
+  sldFalangeDigDerValue: number = 0;
+  sldFalangeProxIzqValue: number = 0;
+  sldFalangeProxDerValue: number = 0;
+  sldManoValue: number = 0;
+  sldAnteBrazoValue: number = 0;
+  sldBrazoValue: number = 0;
   
-  options: Options = {
-    floor: 0,
-    ceil: 250
+  sldFalangeDigIzqOpt: Options = {
+    floor: -360,
+    ceil: 360
+  };
+
+  sldFalangeDigDerOpt: Options = {
+    floor: -360,
+    ceil: 360
+  };
+
+  sldFalangeProxIzqOpt: Options = {
+    floor: -360,
+    ceil: 360
+  };
+
+  sldFalangeProxDerOpt: Options = {
+    floor: -360,
+    ceil: 360
+  };
+
+  sldManoOpt: Options = {
+    floor: -180,
+    ceil: 180
+  };
+
+  sldAnteBrazoOpt: Options = {
+    floor: -180,
+    ceil: 180
+  };
+
+  sldBrazoOpt: Options = {
+    floor: -90,
+    ceil: 90
   };
 
   constructor(private ngZone: NgZone) { }

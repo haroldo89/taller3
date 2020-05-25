@@ -1,48 +1,72 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 my-5">
       <canvas #canvas width="600" height="300"></canvas>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-primary" (click)="play()">Play</button>
-
       <div class="row my-3">
+        <div class="col-12">
+          <label>Falanges digitales</label>
+        </div>
         <div class="col-md-6">
-          <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+          <ng5-slider [(value)]="sldFalangeDigIzqValue" [options]="sldFalangeDigIzqOpt"></ng5-slider>
         </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeDigDerValue" [options]="sldFalangeDigDerOpt"></ng5-slider>
           </div>
         </div>
       </div>
       <div class="row my-3">
+        <div class=col-12>
+          <label>Falanges proximales</label>
+        </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeProxIzqValue" [options]="sldFalangeProxIzqOpt"></ng5-slider>
           </div>
         </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeProxDerValue" [options]="sldFalangeProxDerOpt"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class=col-12>
+          <label>Mano</label>
+        </div>
+        <div class="col-md-12">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="sldManoValue" [options]="sldManoOpt"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class=col-12>
+          <label>Antebrazo</label>
+        </div>
+        <div class="col-md-12">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="sldAnteBrazoValue" [options]="sldAnteBrazoOpt"></ng5-slider>
+          </div>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class=col-12>
+          <label>Brazo</label>
+        </div>
+        <div class="col-md-12">
+          <div class="slidecontainer">
+            <ng5-slider [(value)]="sldBrazoValue" [options]="sldBrazoOpt"></ng5-slider>
           </div>
         </div>
       </div>
       <div class="row my-3">
         <div class="col-md-12">
-          <div class="slidecontainer">
-            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
-          </div>
+          <button class="btn btn-primary" (click)="play()">Play</button>
         </div>
       </div>
-      <div class="row my-3">
-        <div class="col-md-12">
-          <div class="slidecontainer">
-            <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
