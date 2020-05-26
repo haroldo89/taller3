@@ -1,6 +1,6 @@
-import { Component, ViewChild, ElementRef, OnInit, NgZone } from '@angular/core';
-import { Square } from './square';
-import { Options } from 'ng5-slider';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Options, ChangeContext } from 'ng5-slider';
+import { Modelo } from 'src/model/Modelo';
 
 
 @Component({
@@ -12,9 +12,6 @@ export class AppComponent implements OnInit {
   title = 'my-app';
   @ViewChild('canvas', { static: true }) canvas: ElementRef<HTMLCanvasElement>;
   ctx: CanvasRenderingContext2D;
-  requestId;
-  interval;
-  squares: Square[] = [];
 
   sldFalangeDigIzqValue: number = 0;
   sldFalangeDigDerValue: number = 0;
@@ -23,10 +20,11 @@ export class AppComponent implements OnInit {
   sldManoValue: number = 0;
   sldAnteBrazoValue: number = 0;
   sldBrazoValue: number = 0;
-  
+
   sldFalangeDigIzqOpt: Options = {
     floor: -360,
-    ceil: 360
+    ceil: 360,
+
   };
 
   sldFalangeDigDerOpt: Options = {
@@ -59,33 +57,58 @@ export class AppComponent implements OnInit {
     ceil: 90
   };
 
-  constructor(private ngZone: NgZone) { }
+  modelo: Modelo;
+
+  getModelo(): Modelo {
+    if (this.modelo == null) {
+      this.modelo = new Modelo(this.ctx);
+    }
+    return this.modelo;
+  }
+
+  constructor() {   }
+
 
   ngOnInit() {
     this.ctx = this.canvas.nativeElement.getContext('2d');
     this.ctx.fillStyle = 'red';
-    this.ngZone.runOutsideAngular(() => this.tick());
-    setInterval(() => {
-      this.tick();
-    }, 200);
+    this.modelo = new Modelo(this.ctx);
+    this.getModelo().dibujar(this.ctx);
   }
 
-  tick() {
-    this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-    this.squares.forEach((square: Square) => {
-      square.moveRight();
-    });
-    this.requestId = requestAnimationFrame(() => this.tick);
+  onsldBrazoOptChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarBrazo(value, true);
   }
 
-  play() {
-    const square = new Square(this.ctx);
-    this.squares = this.squares.concat(square);
+  onsldAnteBrazoOptChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarAnteBrazo(value, true);
   }
 
-  ngOnDestroy() {
-    clearInterval(this.interval);
-    cancelAnimationFrame(this.requestId);
+  onsldManoValueChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarMano(value, true);
+  }
+
+  onsldFalangeProxDerOptValueChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarFalProxDer(value, true);
+  }
+
+  onsldFalangeProxIzqOptValueChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarFalProxIzq(value, true);
+  }
+
+  onsldFalangeDigDerOptValueChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarFalDigDer(value, true);
+  }
+
+  onsldFalangeDigIzqOptChangeEnd(changeContext: ChangeContext): void {
+    let value: number  = +changeContext.value;
+    this.getModelo().girarFalDigIzq(value, true);
   }
 
 }
