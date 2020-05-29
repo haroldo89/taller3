@@ -23,34 +23,33 @@ export class AppComponent implements OnInit {
   sldBrazoValue: number = 0;
 
   sldFalangeDigIzqOpt: Options = {
-    floor: -360,
-    ceil: 360,
-
+    floor: -60,
+    ceil: 30,
   };
 
   sldFalangeDigDerOpt: Options = {
-    floor: -360,
-    ceil: 360
+    floor: -30,
+    ceil: 60
   };
 
   sldFalangeProxIzqOpt: Options = {
-    floor: -360,
-    ceil: 360
+    floor: -90,
+    ceil: 0
   };
 
   sldFalangeProxDerOpt: Options = {
-    floor: -360,
-    ceil: 360
+    floor: 0,
+    ceil: 90
   };
 
   sldManoOpt: Options = {
-    floor: -180,
-    ceil: 180
+    floor: -90,
+    ceil: 90
   };
 
   sldAnteBrazoOpt: Options = {
-    floor: -180,
-    ceil: 180
+    floor: -90,
+    ceil: 90
   };
 
   sldBrazoOpt: Options = {
