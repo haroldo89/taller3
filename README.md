@@ -3,9 +3,11 @@
 pre-requisitos
 
 instalar nodejs
+
 https://nodejs.org/en/
 
 instalar angular cli
+
 npm install -g @angular/cli
 
 1. ingresar a la ruta 'my-app'
