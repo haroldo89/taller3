@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/sendMessage', function (req, res, next) {
+router.post('/sendMessage', function (req, res, next) {
   var io = req.app.get('socketIo');
-  io.emit('new-message', req.query.format);
-  res.send('[GET] mensaje desde el GET:' + req.query.format);
+  io.emit('new-message', req.body.format);
+  console.log(req.body.format);
+  res.status(200).send(req.body);
 });
-
 
 module.exports = router;

@@ -83,12 +83,11 @@ export class AppComponent implements OnInit {
         this.moveArmPart(message);
         console.log('aca voy a poner un mensaje:' + message);
       });
-
   }
 
   // Enviar mensaje a socket
   sendMessage(message: any) {
-    this.socketService.sendMessage(message);
+    this.socketService.sendMessage(message).subscribe();
   }
 
   moveArmPart(responseData: string) {

@@ -9,11 +9,11 @@
           <label>Falanges digitales</label>
         </div>
         <div class="col-md-6">
-          <ng5-slider [(value)]="sldFalangeDigIzqValue" [options]="sldFalangeDigIzqOpt" (userChange)="onsldFalangeDigIzqOptChangeEnd($event)"></ng5-slider>
+          <ng5-slider [(value)]="sldFalangeDigIzqValue" [options]="sldFalangeDigIzqOpt" (userChangeEnd)="onsldFalangeDigIzqOptChangeEnd($event)"></ng5-slider>
         </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldFalangeDigDerValue" [options]="sldFalangeDigDerOpt" (userChange)="onsldFalangeDigDerOptValueChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeDigDerValue" [options]="sldFalangeDigDerOpt" (userChangeEnd)="onsldFalangeDigDerOptValueChangeEnd($event)"></ng5-slider>
           </div>
         </div>
       </div>
@@ -23,12 +23,12 @@
         </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldFalangeProxIzqValue" [options]="sldFalangeProxIzqOpt" (userChange)="onsldFalangeProxIzqOptValueChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeProxIzqValue" [options]="sldFalangeProxIzqOpt" (userChangeEnd)="onsldFalangeProxIzqOptValueChangeEnd($event)"></ng5-slider>
           </div>
         </div>
         <div class="col-md-6">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldFalangeProxDerValue" [options]="sldFalangeProxDerOpt" (userChange)="onsldFalangeProxDerOptValueChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldFalangeProxDerValue" [options]="sldFalangeProxDerOpt" (userChangeEnd)="onsldFalangeProxDerOptValueChangeEnd($event)"></ng5-slider>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-12">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldManoValue" [options]="sldManoOpt" (userChange)="onsldManoValueChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldManoValue" [options]="sldManoOpt" (userChangeEnd)="onsldManoValueChangeEnd($event)"></ng5-slider>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-12">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldAnteBrazoValue" [options]="sldAnteBrazoOpt" (userChange)="onsldAnteBrazoOptChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldAnteBrazoValue" [options]="sldAnteBrazoOpt" (userChangeEnd)="onsldAnteBrazoOptChangeEnd($event)"></ng5-slider>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="col-md-12">
           <div class="slidecontainer">
-            <ng5-slider [(value)]="sldBrazoValue" [options]="sldBrazoOpt" (userChange)="onsldBrazoOptChangeEnd($event)"></ng5-slider>
+            <ng5-slider [(value)]="sldBrazoValue" [options]="sldBrazoOpt" (userChangeEnd)="onsldBrazoOptChangeEnd($event)"></ng5-slider>
           </div>
         </div>
       </div>
